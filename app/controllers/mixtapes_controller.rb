@@ -64,6 +64,11 @@ class MixtapesController < ApplicationController
     render :index
   end
 
+  def subgenres
+    @mixtapes = Mixtape.find_by_subgenre(subgenre_params[:subgenre])
+    render :index
+  end
+
 private
   def mixtape_params
     params.require(:mixtape).permit(:title, :image, :subgenre, :year)
@@ -71,5 +76,9 @@ private
 
   def rate_params
     params.permit(:rating)
+  end
+
+  def subgenre_params
+    params.permit(:subgenre)
   end
 end

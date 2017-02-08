@@ -33,4 +33,12 @@ class Mixtape < ActiveRecord::Base
     self.order(year: :desc)
   end
 
+  def self.unique_subgenres
+    self.all.map(&:subgenre).uniq
+  end
+
+  def self.find_by_subgenre(genre)
+     self.where(:subgenre => genre)
+  end
+
 end

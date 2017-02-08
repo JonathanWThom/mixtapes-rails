@@ -3,6 +3,14 @@
 <%= button_to 'Alphabetize', mixtapes_alphabetize_path, method: 'get' %>
 <%= button_to 'Sort By Year', mixtapes_year_sort_path, method: 'get' %>
 
+<div>
+  <%= form_tag(mixtapes_subgenres_path, method: 'get') do %>
+    <%= label_tag 'Select Subgenre' %><br>
+    <%= select_tag :subgenre, options_for_select(Mixtape.unique_subgenres) %>
+    <%= submit_tag 'Filter' %>
+  <% end %>
+</div>
+
 <ul>
 <% @mixtapes.each do |mixtape| %>
   <li><%= link_to mixtape.title, mixtape_path(mixtape) %> | <%= mixtape.year %></li>
