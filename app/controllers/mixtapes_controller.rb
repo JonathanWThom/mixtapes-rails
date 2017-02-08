@@ -6,6 +6,7 @@ class MixtapesController < ApplicationController
   def show
     @mixtape = Mixtape.find(params[:id])
     @rating = @mixtape.rating
+    @review = @mixtape.reviews.new
   end
 
   def new

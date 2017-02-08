@@ -22,3 +22,11 @@
   <%= label_tag :rating, '5', :value => 5 %><br>
   <%= submit_tag("Rate") %>
 <% end %>
+<hr>
+<h3>Reviews</h3>
+<% @mixtape.reviews.each do |review| %>
+  <p><%= review.content %></p>
+  <hr>
+<% end %>
+
+<%= render 'reviews/form' , :object => @review%>
