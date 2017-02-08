@@ -29,4 +29,8 @@ class Mixtape < ActiveRecord::Base
     self.order("lower(title)")
   end
 
+  def self.year_sort
+    self.order(year: :desc)
+  end
+
 end

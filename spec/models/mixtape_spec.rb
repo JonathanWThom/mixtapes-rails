@@ -20,4 +20,14 @@ describe Mixtape do
       expect(Mixtape.alphabetize).to(eq([mixtape2, mixtape1]))
     end
   end
+
+  describe '.alphabetize' do
+    it 'will sort alphabetically' do
+      user = User.create(name: 'JT')
+      mixtape1 = user.mixtapes.create(title: 'B', year: 1990, subgenre: 'Hot Fiyah', image: 'image here')
+      mixtape2 = user.mixtapes.create(title: 'A', year: 2000, subgenre: 'Hot Fiyah', image: 'image here')
+      expect(Mixtape.alphabetize).to(eq([mixtape2, mixtape1]))
+    end
+  end
+
 end

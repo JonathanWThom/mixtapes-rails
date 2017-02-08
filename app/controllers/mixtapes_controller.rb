@@ -59,6 +59,11 @@ class MixtapesController < ApplicationController
     render :index
   end
 
+  def year_sort
+    @mixtapes = Mixtape.year_sort
+    render :index
+  end
+
 private
   def mixtape_params
     params.require(:mixtape).permit(:title, :image, :subgenre, :year)
