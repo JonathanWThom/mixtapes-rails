@@ -1,0 +1,9 @@
+<h1>Mixtapes</h1>
+
+<ul>
+<% @mixtapes.each do |mixtape| %>
+  <li><%= mixtape.title %></li>
+  <li><%= mixtape.year %></li>
+  <hr>
+<% end %>
+</ul>
