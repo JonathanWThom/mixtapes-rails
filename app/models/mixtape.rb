@@ -25,4 +25,8 @@ class Mixtape < ActiveRecord::Base
     self.rating_count += 1
   end
 
+  def self.alphabetize
+    self.order("lower(title)")
+  end
+
 end

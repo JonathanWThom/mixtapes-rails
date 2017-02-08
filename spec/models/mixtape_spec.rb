@@ -7,12 +7,17 @@ describe Mixtape do
     should validate_presence_of :image
     should validate_presence_of :subgenre
     should validate_presence_of :year
-    should validate_presence_of :rating_sum
-    should validate_presence_of :rating_count
   }
 
   it { should belong_to :user }
   it { should have_many :reviews }
-  it { should have_many(:users).through(:reviews) }
 
+  describe '.alphabetize' do
+    it 'will sort alphabetically' do
+      user = User.create(name: 'JT')
+      mixtape1 = user.mixtapes.create(title: 'B', year: 1990, subgenre: 'Hot Fiyah', image: 'image here')
+      mixtape2 = user.mixtapes.create(title: 'A', year: 1990, subgenre: 'Hot Fiyah', image: 'image here')
+      expect(Mixtape.alphabetize).to(eq([mixtape2, mixtape1]))
+    end
+  end
 end

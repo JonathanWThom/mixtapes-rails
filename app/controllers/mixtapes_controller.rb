@@ -54,6 +54,11 @@ class MixtapesController < ApplicationController
     redirect_to mixtape_path(@mixtape)
   end
 
+  def alphabetize
+    @mixtapes = Mixtape.alphabetize
+    render :index
+  end
+
 private
   def mixtape_params
     params.require(:mixtape).permit(:title, :image, :subgenre, :year)

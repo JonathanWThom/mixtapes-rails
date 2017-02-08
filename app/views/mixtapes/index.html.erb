@@ -1,5 +1,7 @@
 <h1>Mixtapes</h1>
 
+<%= button_to 'Alphabetize', mixtapes_alphabetize_path, method: 'get' %>
+
 <ul>
 <% @mixtapes.each do |mixtape| %>
   <li><%= link_to mixtape.title, mixtape_path(mixtape) %> | <%= mixtape.year %></li>
