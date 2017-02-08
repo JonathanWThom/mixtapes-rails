@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208190214) do
+ActiveRecord::Schema.define(version: 20170208215355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 20170208190214) do
     t.string   "image"
     t.string   "subgenre"
     t.integer  "year"
-    t.integer  "rating_sum"
-    t.integer  "rating_count"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "rating_sum",   default: 0
+    t.integer  "rating_count", default: 0
   end
 
   create_table "reviews", force: :cascade do |t|

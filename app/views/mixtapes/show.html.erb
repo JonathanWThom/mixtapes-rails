@@ -6,3 +6,19 @@
 <p><%= @mixtape.subgenre %></p>
 
 <p>Rating: <%= @rating %></p>
+
+<h5>Rate This Mixtape</h5>
+
+<%= form_tag(mixtape_rate_path(@mixtape), method: 'patch') do %>
+  <%= radio_button_tag :rating, 1 %>
+  <%= label_tag :rating, '1', :value => 1 %><br>
+  <%= radio_button_tag :rating, 2 %>
+  <%= label_tag :rating, '2', :value => 2 %><br>
+  <%= radio_button_tag :rating, 3 %>
+  <%= label_tag :rating, '3', :value => 3 %><br>
+  <%= radio_button_tag :rating, 4 %>
+  <%= label_tag :rating, '4', :value => 4 %><br>
+  <%= radio_button_tag :rating, 5 %>
+  <%= label_tag :rating, '5', :value => 5 %><br>
+  <%= submit_tag("Rate") %>
+<% end %>

@@ -45,8 +45,20 @@ class MixtapesController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def rate
+    @mixtape = Mixtape.find(params[:mixtape_id])
+    @mixtape.new_rating(rate_params[:rating])
+    @mixtape.save
+
+    redirect_to mixtape_path(@mixtape)
+  end
+
 private
   def mixtape_params
     params.require(:mixtape).permit(:title, :image, :subgenre, :year)
+  end
+
+  def rate_params
+    params.permit(:rating)
   end
 end
