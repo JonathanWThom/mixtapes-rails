@@ -12,7 +12,7 @@ class Mixtape < ActiveRecord::Base
 
   def rating
     if self.rating_sum > 0 && self.rating_count > 0
-      self.rating_sum / self.rating_count
+      (self.rating_sum / self.rating_count).round(2)
     end
   end
 
