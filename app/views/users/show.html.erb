@@ -2,7 +2,9 @@
 
 <ul>
   <% @user.mixtapes.each do |mixtape| %>
-    <li><%=  mixtape.title %> |  <%= link_to 'Edit', edit_user_mixtape_path(@user, mixtape) %> </li>
+    <li><%=  mixtape.title %> |  <%= link_to 'Edit', edit_user_mixtape_path(@user, mixtape) %> | <%= link_to "Delete", user_mixtape_path(@user, mixtape),
+                             :data => {:confirm => "You sure?",
+                                       :method => "delete"} %> </li>
   <% end %>
 </ul>
 

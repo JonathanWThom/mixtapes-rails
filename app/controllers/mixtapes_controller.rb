@@ -33,6 +33,13 @@ class MixtapesController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    @mixtape = Mixtape.find(params[:id])
+    @mixtape.destroy
+    redirect_to user_path(@user)
+  end
+
 private
   def mixtape_params
     params.require(:mixtape).permit(:title, :image, :subgenre, :year)
