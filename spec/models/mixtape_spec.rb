@@ -11,5 +11,8 @@ describe Mixtape do
     should validate_presence_of :rating_count
   }
 
+  it { should belong_to :user }
+  it { should have_many :reviews }
+  it { should have_many(:users).through(:reviews) }
 
 end
