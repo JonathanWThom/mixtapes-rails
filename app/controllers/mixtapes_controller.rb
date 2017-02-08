@@ -3,6 +3,11 @@ class MixtapesController < ApplicationController
     @mixtapes = Mixtape.all
   end
 
+  def show
+    @mixtape = Mixtape.find(params[:id])
+    @rating = @mixtape.rating
+  end
+
   def new
     @user = User.find(params[:user_id])
     @mixtape = @user.mixtapes.new
