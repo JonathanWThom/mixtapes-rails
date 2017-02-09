@@ -17,11 +17,7 @@ class Mixtape < ActiveRecord::Base
   end
 
   def new_rating(rating_add)
-    puts "rating: ",rating_add
-    puts "rating_sum before: ", self.rating_sum
     self.rating_sum += rating_add.to_i
-    puts "rating_sum after: ", self.rating_sum
-
     self.rating_count += 1
   end
 

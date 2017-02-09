@@ -9,7 +9,7 @@
 </ul>
 
 <p><%= link_to "Add Mixtape", new_user_mixtape_path(@user) %> </p>
-<p><%= link_to "Edit", edit_user_path(@user) %></p>
-<p><%= link_to "Delete", user_path(@user),
+<p><%= link_to "Edit User", edit_user_path(@user) %></p>
+<p><%= link_to "Delete User", user_path(@user),
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>

@@ -25,9 +25,6 @@ class UsersController < ApplicationController
     @user.mixtapes.each do |mixtape|
       mixtape.destroy
     end
-    @user.reviews.each do |review|
-      review.destroy
-    end
     @user.destroy
     redirect_to users_path
   end

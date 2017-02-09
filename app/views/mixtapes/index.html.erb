@@ -20,7 +20,7 @@
 <% if @featured %>
   <div class="featured">
     <h2>Featured</h2>
-    <h3><%= @featured.title %></h3>
+    <h3><%= link_to @featured.title, mixtape_path(@featured) %></h3>
     <%= image_tag @featured.image %>
   </div>
 <% end %>

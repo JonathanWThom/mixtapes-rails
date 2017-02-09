@@ -23,10 +23,13 @@
   <%= submit_tag("Rate") %>
 <% end %>
 <hr>
+
 <h3>Reviews</h3>
 <% @mixtape.reviews.each do |review| %>
   <p><%= review.content %></p>
   <hr>
 <% end %>
+
+<%= content_tag(:div, notice, class: 'notice') if notice %>
 
 <%= render 'reviews/form' , :object => @review%>

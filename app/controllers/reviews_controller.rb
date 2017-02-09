@@ -5,7 +5,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to mixtape_path(@mixtape)
     else
-      render :new
+      flash[:notice] = "Please fill in your review"
+      redirect_to mixtape_path(@mixtape)
     end
   end
 
