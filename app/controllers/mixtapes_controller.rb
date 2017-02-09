@@ -1,6 +1,6 @@
 class MixtapesController < ApplicationController
   def index
-    if Mixtape.all
+    if Mixtape.all.length > 0
       @featured = Mixtape.order('RANDOM()').first
       allMixtapes = []
       Mixtape.all.each do |mixtape|
