@@ -8,4 +8,11 @@ describe 'the add a user process' do
     click_on 'Create User'
     expect(page).to have_content('Jonathan')
   end
+
+  it 'will fail to add a user' do
+    visit users_path
+    click_link 'Create a User'
+    click_on 'Create User'
+    expect(page).to have_content('errors')
+  end
 end

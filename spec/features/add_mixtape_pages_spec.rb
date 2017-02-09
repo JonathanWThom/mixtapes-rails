@@ -12,4 +12,12 @@ describe 'the add mixtape path' do
     click_on 'Create Mixtape'
     expect(page).to have_content('MVC')
   end
+
+  it 'will fail to create a mixtape' do
+    user = User.create(name: 'James')
+    visit new_user_mixtape_path(user)
+    click_on 'Create Mixtape'
+    expect(page).to have_content('errors')
+  end
+
 end

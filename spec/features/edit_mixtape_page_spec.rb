@@ -13,7 +13,17 @@ describe 'the edit mixtape path' do
     click_on 'Update Mixtape'
     expect(page).to have_content('Different Title')
   end
+
+  it 'will fail to edit a mixtape' do
+    user = User.create(name: 'James')
+    mixtape = user.mixtapes.create(title: 'MVC', image: 'win.jpg', subgenre: 'Epic Music', year: 1990)
+    visit edit_user_mixtape_path(user, mixtape)
+    fill_in 'Title', :with => ''
+    click_on 'Update Mixtape'
+    expect(page).to have_content('errors')
+  end
 end
+
 
 describe 'the delete mixtape path' do
   it 'will delete a mixtape' do
