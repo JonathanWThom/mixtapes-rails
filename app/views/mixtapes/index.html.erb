@@ -17,11 +17,13 @@
   <% end %>
 </div>
 
-<div class="featured">
-  <h2>Featured</h2>
-  <h3><%= @featured.title %></h3>
-  <%= image_tag @featured.image %>
-</div>
+<% if @featured %>
+  <div class="featured">
+    <h2>Featured</h2>
+    <h3><%= @featured.title %></h3>
+    <%= image_tag @featured.image %>
+  </div>
+<% end %>
 <ul>
 <% @mixtapes.each do |mixtape| %>
   <li><%= link_to mixtape.title, mixtape_path(mixtape) %> | <%= mixtape.year %></li>
