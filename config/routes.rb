@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'mixtapes/alphabetize', to: 'mixtapes#alphabetize'
   get 'mixtapes/year_sort', to: 'mixtapes#year_sort'
   get 'mixtapes/subgenres', to: 'mixtapes#subgenres'
+  get 'mixtapes/search', to: 'mixtapes#search'
 
   resources :mixtapes, :only => [:index, :show] do
     patch '/rate', to: 'mixtapes#rate'

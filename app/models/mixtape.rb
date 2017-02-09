@@ -41,4 +41,8 @@ class Mixtape < ActiveRecord::Base
      self.where(:subgenre => genre)
   end
 
+  def self.search_query(search_input)
+    self.basic_search(search_input)
+  end
+
 end

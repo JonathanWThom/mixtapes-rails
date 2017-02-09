@@ -69,6 +69,11 @@ class MixtapesController < ApplicationController
     render :index
   end
 
+  def search
+    @mixtapes = Mixtape.search_query(search_params[:search_input])
+    render :index
+  end
+
 private
   def mixtape_params
     params.require(:mixtape).permit(:title, :image, :subgenre, :year)
@@ -80,5 +85,9 @@ private
 
   def subgenre_params
     params.permit(:subgenre)
+  end
+
+  def search_params
+    params.permit(:search_input)
   end
 end
