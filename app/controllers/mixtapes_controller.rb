@@ -1,12 +1,16 @@
 class MixtapesController < ApplicationController
   def index
-    @featured = Mixtape.order('RANDOM()').first
-    allMixtapes = []
-    Mixtape.all.each do |mixtape|
-      allMixtapes.push(mixtape)
+    if Mixtape.all
+      @featured = Mixtape.order('RANDOM()').first
+      allMixtapes = []
+      Mixtape.all.each do |mixtape|
+        allMixtapes.push(mixtape)
+      end
+      allMixtapes.delete_at(allMixtapes.index(@featured))
+      @mixtapes = allMixtapes
+    else
+      @mixtapes = Mixtape.all
     end
-    allMixtapes.delete_at(allMixtapes.index(@featured))
-    @mixtapes = allMixtapes
   end
 
   def show
