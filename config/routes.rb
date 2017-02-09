@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'mixtapes#index'
+  root 'mixtapes#index'
   get 'mixtapes/alphabetize', to: 'mixtapes#alphabetize'
   get 'mixtapes/year_sort', to: 'mixtapes#year_sort'
   get 'mixtapes/subgenres', to: 'mixtapes#subgenres'
