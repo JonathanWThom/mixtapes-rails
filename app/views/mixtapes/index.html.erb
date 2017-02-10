@@ -6,7 +6,8 @@
   <%= text_field_tag :search_input %>
   <%= submit_tag 'Search' %>
 <% end %>
-<%= button_to 'Alphabetize', mixtapes_alphabetize_path, method: 'get' %>
+<!-- <%= button_to 'Alphabetize', mixtapes_alphabetize_path, method: 'get' %> -->
+<%= link_to 'Alphabetize', :alphabetize => 'title' %>
 <%= button_to 'Sort By Year', mixtapes_year_sort_path, method: 'get' %>
 
 <div>

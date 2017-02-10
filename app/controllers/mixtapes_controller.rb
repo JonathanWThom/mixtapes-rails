@@ -11,6 +11,8 @@ class MixtapesController < ApplicationController
     else
       @mixtapes = Mixtape.all
     end
+
+    @mixtapes = Mixtape.order(params[:alphabetize])
   end
 
   def show
