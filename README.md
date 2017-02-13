@@ -1,24 +1,17 @@
-# README
+# Mixtapes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Implementing one to many relationships with Ruby on Rails. 
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+```
+git clone https://github.com/JonathanWThom/mixtapes-rails
+cd mixtapes-rails
+rake db:create
+rake db:migrate
+rails s
+```
 
-* System dependencies
+## License
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MIT
